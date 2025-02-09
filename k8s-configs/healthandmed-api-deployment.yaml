@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthandmed-api
+  labels:
+    app: healthandmed-api
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: healthandmed-api
+  template:
+    metadata:
+      labels:
+        app: healthandmed-api
+      annotations:
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/metrics"
+        prometheus.io/scrape: "true"
+    spec:
+      containers:
+        - name: healthandmed-api-container
+          image: docker.io/library/healthandmed-api:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: healthandmed-api-configmap
+

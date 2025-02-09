@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: healthandmed-api-configmap
+data:
+  Logging__LogLevel__Default: "Information"
+  Logging__LogLevel__Microsoft.AspNetCore: "Warning"
+  AllowedHosts: "*"
+  ConnectionStrings__DefaultConnection: "Server=tcp:sql-tc-fase1.database.windows.net,1433;Initial Catalog=db-tc-fase1;Persist Security Info=False;User ID=UserId;Password=UserPassword;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
