@@ -17,7 +17,6 @@ Esta API foi desenvolvida seguindo as melhores práticas, utilizando o Entity Fr
 - [Executando a API Localmente](#executando-a-api-localmente)
 - [Testes](#testes)
 - [CI/CD](#cicd)
-- [Licença](#licença)
 
 ---
 
@@ -246,12 +245,6 @@ dotnet test
 
 O projeto utiliza o GitHub Actions para integração contínua e deploy:
 - O arquivo `.github/workflows/pipeline-ci.yml` define as etapas de build, teste e deploy (publicação da imagem Docker no Docker Hub).
-
----
-
-## Licença
-
-[Informe aqui a licença do projeto, ex.: MIT, Apache, etc.]
 
 ---
 
